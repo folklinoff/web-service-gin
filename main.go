@@ -7,6 +7,11 @@ type Game struct {
 	publisher *Publisher `json:"Publisher"`
 }
 
+type Publisher struct {
+	name string `json:"name"`
+	year int16  `json:"year"`
+}
+
 func main() {
 
 }
