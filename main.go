@@ -1,5 +1,9 @@
 package main
 
+func getGames(c *gin.Context) {
+	c.IndentedJSON(https.StatusOK, games)
+}
+
 func main() {
 	var publishers []Publisher = []Publisher{
 		Publisher{name: "Valve", year: 1996},
