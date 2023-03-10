@@ -6,6 +6,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func postGames(c *gin.Context) {
+	var newGame Game
+
+	if err := c.BindJSON(&newGame); err != nil {
+		return
+	}
+
+	games = append(games, newGame)
+	c.IndentedJSON(http.StatusCreated, newGame)
+}
+
 var publishers []Publisher = []Publisher{
 	{Name: "Valve", Year: 1996},
 	{Name: "Mojang", Year: 2009},
