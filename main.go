@@ -36,6 +36,7 @@ func getGames(c *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/games", getGames)
+	router.POST("/games", postGames)
 
 	router.Run("localhost:8080")
 }
