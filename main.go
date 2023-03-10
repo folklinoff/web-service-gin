@@ -7,15 +7,15 @@ import (
 )
 
 var publishers []Publisher = []Publisher{
-	Publisher{name: "Valve", year: 1996},
-	Publisher{name: "Mojang", year: 2009},
-	Publisher{name: "Bethesda Game Studios", year: 2001},
+	{Name: "Valve", Year: 1996},
+	{Name: "Mojang", Year: 2009},
+	{Name: "Bethesda Game Studios", Year: 2001},
 }
 
 var games []Game = []Game{
-	Game{name: "CS:GO", genre: "FPS", year: 2001, publisher: &publishers[0]},
-	Game{name: "Minecraft", genre: "Sandbox", year: 2009, publisher: &publishers[1]},
-	Game{name: "Skyrim", genre: "Roleplay Fighting", year: 2011, publisher: &publishers[2]},
+	{Name: "CS:GO", Genre: "FPS", Year: 2001, Publisher: &publishers[0]},
+	{Name: "Minecraft", Genre: "Sandbox", Year: 2009, Publisher: &publishers[1]},
+	{Name: "Skyrim", Genre: "Roleplay Fighting", Year: 2011, Publisher: &publishers[2]},
 }
 
 func getGames(c *gin.Context) {
@@ -24,7 +24,7 @@ func getGames(c *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/Games", getGames)
+	router.GET("/games", getGames)
 
 	router.Run("localhost:8080")
 }
